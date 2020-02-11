@@ -3,6 +3,7 @@ import React from 'react';
 function Home() {
     return (
         <div className={"content"}>
+            <div className={"card"}>
             <h1>Welcome!</h1>
             <p>The purpose of this website is for me to reiterate what I've learned in IT 354 through an interactive medium.</p>
             <p>To accomplish this, I'll be summarizing articles, posting demonstration video snippets, and
@@ -15,6 +16,7 @@ function Home() {
             <p>Fonts incorporated include an icon font from <a href={"https://material.io/resources/icons/?style=baseline"}>
                 Material-Icons</a>, Open Sans for the header, and IBM Plex for the p, span, and a tags imported in the
                 CSS page from<a href={"https://www.fonts.google.com"}> Google Fonts</a>.</p>
+            </div>
         </div>
     )
 }

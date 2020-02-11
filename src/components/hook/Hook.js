@@ -21,6 +21,7 @@ function TodoForm({addTodo}){
         <input type="text" className="input" value={value} onChange={e => setValue(e.target.value)}/>
     </form>
 }
+
 function Hook() {
     const [todos, setTodos] = useState([
         {

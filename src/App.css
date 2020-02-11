@@ -46,11 +46,11 @@ a{
     transition: .3s ease;
 }
 
-p > a{
+p > a, li > a{
     color: #A46877;
 }
 
-p > a:hover{
+p > a:hover, li > a:hover{
     color: #333333;
 }
 
@@ -59,10 +59,7 @@ p > a:hover{
     width: 100%;
     position: relative;
     margin: 0 auto;
-}
-
-.content{
-    padding: 2rem;
+    padding-top: 70px;
 }
 
 .fade-appear,
@@ -104,4 +101,44 @@ i{
     iframe{
         height: 200px;
     }
+}
+
+.card{
+    box-shadow: 0 0 4px 0 #b7b7b7;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.cardhr{
+    background-image: linear-gradient(to right, #acacac, #c0c0c0, #d5d5d5, #eaeaea, #ffffff);
+    height: 1px;
+    border: 0;
+    margin: 5VH 0;
+}
+
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.fadeinClass{
+    opacity: 0;
+    animation: fadein .5s ease .1s 1 normal forwards;
+    z-index: 1;
+}
+
+.content{
+    padding: 2rem;
+}
+
+.assignmentContent{
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+    justify-content: space-between;
 }

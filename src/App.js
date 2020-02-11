@@ -8,9 +8,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 
-//class App extends React.Component{
   function App(){
-    //render(){
         return (
                 <div className={"App container"}>
                     <Header/>
@@ -27,7 +25,6 @@ import {CSSTransition, TransitionGroup} from "react-transition-group";
                     )}/>
                 </div>
         );
-   // }
 }
 
 export default App;

@@ -7,7 +7,68 @@ p{
     margin-bottom: 1rem;
 }
 
-h2{
-    margin: .5rem 0;
+.assignmentheader{
+    display: flex;
+    align-items: center;
+    height: 45px;
 }
 
+.assignments{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.assignmentContainer{
+    width: 80%;
+    margin-right: 5%;
+}
+
+#sidebar{
+    position: sticky;
+    top: 100px;
+    right: 0;
+    padding: 1rem;
+    overflow: auto;
+}
+
+#sidebar ul{
+    list-style: none;
+}
+
+#sidebar li{
+    border-bottom: 1px solid #eaeaea;
+    padding: 10px 10px 10px 0;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+#sidebar li:last-of-type{
+    margin-bottom: 0;
+}
+
+.activeassignment{
+    color: black;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+@media only screen and (max-width: 685px) {
+#sidebar{
+    display: none;
+}
+    .assignmentContainer {
+        width: 100%;
+        margin: 0;
+    }
+
+}
+
+pre{
+    background-color: #333;
+    color: wheat;
+    border-radius: 8px;
+}
