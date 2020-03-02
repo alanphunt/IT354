@@ -1,22 +1,14 @@
 import React from "react";
 
-const Sidebar = c => {
-    let keys = [];
-
-    for(let i = 0; i < Object.keys(c.assignment).length; i++){
-        let arr = Object.keys(Object.entries(c.assignment)[i][1]);
-        for(let j = 0; j < Object.keys(arr).length; j++){
-            keys.push(arr[j]);
-        }
-    }
-
+const Sidebar = props => {
     return (
-       keys.map((v, i) => (
-            <li key={v}>
+        Object.keys(props.assignment).map(key => (
+            <li key={key}>
                 <i className={"material-icons"}>arrow_right</i>
-                <a href={"#" + v.replace(/[^\w\d]/g, '').toLowerCase()}>{v}</a>
+                <a href={"#" + key.replace(/[^\w\d]/g, '').toLowerCase()}>{key}</a>
             </li>
-        )))
+        ))
+    )
 };
 
 export default Sidebar;

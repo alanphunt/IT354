@@ -1,24 +1,26 @@
 import React, {useState} from 'react';
-import './nav.css';
 import {Link} from 'react-router-dom';
+import Dropdown from '../Dropdown'
 
-function Nav(){
+function Nav(props){
     let x = 0;
 
-    const [state] = useState([
-            {key: `link${x++}`, text: "Home", url: "", icon: "home"},
-            {key: `link${x++}`, text: "Contact", url: "contact", icon: "add_comment"},
-            {key: `link${x++}`, text: "Tutorials", url: "tutorials", icon: "library_books"}
-        ]);
+    const links = [
+            {key: `link${x++}`, text: "Home", url: "", icon: "home", dropdown: false},
+            {key: `link${x++}`, text: "Tutorials", url: "tutorials", icon: "library_books", dropdown: true},
+            {key: `link${x++}`, text: "Contact", url: "contact", icon: "add_comment", dropdown: false}
+        ];
 
         return(
-            state.map((link)=>(
+            links.map( link =>(
                 <div className="navlink" key={link.key}>
-                    <Link to={'/'+link.url}>
-                        <i className="material-icons i-marg-right">{link.icon}</i>
-                        {link.text}
-                    </Link>
-                    <div className={"riser"}></div>
+                    {link.dropdown === false
+                        ?   <Link className="navlinkInner" to={'/'+link.url}>
+                                <i className="material-icons i-marg-right">{link.icon}</i>
+                                <span>{link.text}</span>
+                            </Link>
+                        : <Dropdown link={link} assignmentList={props.assigmentList}/>
+                    }
                 </div>
             ))
         );

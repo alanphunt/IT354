@@ -111,10 +111,10 @@ i{
 }
 
 .cardhr{
-    background-image: linear-gradient(to right, #acacac, #c0c0c0, #d5d5d5, #eaeaea, #ffffff);
+    background-image: linear-gradient(to right, #acacac, #ffffff);
     height: 1px;
-    border: 0;
-    margin: 5VH 0;
+    border: none;
+    margin-bottom: 1.5rem;
 }
 
 @keyframes fadein {
@@ -141,4 +141,33 @@ i{
     flex-flow: row;
     align-items: flex-start;
     justify-content: space-between;
+}
+
+.dropdownInner{
+    display: none;
+    background-color: #333333;
+    transition: .3s ease;
+}
+
+.dropdownInnerHover{
+    position: absolute;
+    top: 100%;
+    display: flex;
+    flex-flow: column;
+    padding: 1rem 1rem 0 1rem;
+    border-radius: 0 0 8px 8px;
+    border-top: 4px solid #A46877;
+    width: 300%;
+    text-align: center;
+}
+
+.dropdownItem{
+    border-bottom: 1px solid #555;
+    padding-bottom: 7px;
+    margin-bottom: 1rem;
+    transition: .3s ease;
+}
+
+.dropdownItem:hover{
+    color: #999;
 }

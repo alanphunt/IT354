@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import ReactHtmlParser from 'react-html-parser'
 import styles from './Assignment.css'
-import hoisting from "../../images/hoisting.jpg";
 
-function Assignment(c){
+/*function Assignment(props){
 
-    const subcategories = (assignment)=> {
-        return Object.keys(assignment).map((key, i) =>{
+    const subcategories = (assignment) => {
+        console.log(assignment[Object.keys(assignment)[0]]);
+        return Object.keys(assignment).map((key, i) => {
             return(
                 <div key={key} id={key.replace(/[^\w\d]/g, "").toLowerCase()}>
                     <div className={"title"}>
@@ -21,12 +21,40 @@ function Assignment(c){
     };
 
     return (
-        Object.keys(c.assignment).map((e, ind) => (
-            <div key={e} className={"assignments card"} id={e.replace(/[^\w\d]/g, "").toLowerCase()}>
-                {subcategories(c.assignment[e])}
+            <div className={"assignments card"}>
+                {subcategories(props.assignment)}
+            </div>
+    );
+}*/
+
+/*function Assignment(props){
+    return (
+        Object.keys(props.assignment).map((key, ind) => (
+            <div key={key} className={"assignments card"} id={key.replace(/[^\w\d]/g, "").toLowerCase()}>
+                <div className={"title"}>
+                    <i className={"material-icons-outlined i-marg-right"}>subdirectory_arrow_right</i>
+                    <h2>{key}</h2>
+                </div>
+                <hr className={"cardhr"}/>
+                {ReactHtmlParser(props.assignment[key])}
             </div>
         ))
     );
+}*/
+
+function Assignment(props){
+        return (
+            Object.keys(props.assignment).map((key, ind) => (
+                <div key={key} className={"assignments card"} id={key.replace(/[^\w\d]/g, "").toLowerCase()}>
+                    <div className={"title"}>
+                        <i className={"material-icons-outlined i-marg-right"}>subdirectory_arrow_right</i>
+                        <h2>{key}</h2>
+                    </div>
+                    <hr className={"cardhr"}/>
+                    {ReactHtmlParser(props.assignment[key])}
+                </div>
+            ))
+        );
 }
 
 export default Assignment;
