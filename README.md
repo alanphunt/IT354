@@ -1,3 +1,15 @@
+ASSIGNMENT 2 UPDATES__________
++ Changed code image to just text.
++ Implemented JS function to move navbar out of view upon scroll down but bring it back upon scroll up to combat the navbar eating page content. This also required adding a padding to the page because position: sticky 'lifts' the element from the DOM.
++ As for seeing content behind the navbar that was intentional and I mimicked Apple's transform: blur and backdrop-filter: saturate CSS properties and have kept it. 
++ Added 'card' class styles to main content wrappers on each page to eat up some white space to make the left-centered content less off putting and removed the max-width attribute on those elements to take up more space.
++ Added an HR tag in-between subsections of each assignment to space things out. Each assignment will be within it's own 'card' element to add further separation. 
++ Removed any front-end mention of "assignment" and simply replaced with the subcategory name.
++ Changed 'GitHub' to 'My GitHub' on Contact page so user knows that 'My GitHub' is another source to learn more about me. 
++ Added dynamic indexing element on the Tutorial page for better navigation. Decided against using scroll-behavior: smooth so that when you click a subcategory link and it scrolls back up it doesn't trigger bringing the navbar back into view. 
++ I'm going to try to implement a dropdown div when a user hovers over the Tutorials page to go to individual pages of assignments while still only using one page to dynamically display the corresponding assignment data, may not get to it in time before the deadline. *Didn't happen
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
