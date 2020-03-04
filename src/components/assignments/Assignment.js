@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ReactHtmlParser from 'react-html-parser'
-import styles from './Assignment.css'
+import './Assignment.css'
 
 /*function Assignment(props){
 

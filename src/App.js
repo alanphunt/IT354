@@ -254,9 +254,130 @@ function App(){
                     "<p>So here we've created an object using classic notation new Object() and we decided what attributes we"+
                     " wanted the alan object to have using the '.' notation, i.e. .name, .major, and .interestingFact,"+
                     " to which we output all of those using the object's summary function (which needed a conditional statement"+
-                    " to prevent it from printing out a literal string of the function itself.</p>",
+                    " to prevent it from printing out a literal string of the function itself. Now let's see equivalent"+
+                    " options to create objects and set and call its properties.</p>"+
+                    `<pre>
+        let alan = new Object();
+        alan['name'] = 'alan hunt';
+        alan['major'] = 'information systems';
+        alan['interestingFact'] = 'Im a drummer and I used to professionally DJ weddings';
+        alan['summary'] = function(){
+        for(let [key, value] of Object.entries(this)){
+            if(key !== "summary")
+                console.log(\`\${key} : \${value}\`)
+            }
+        };
+        
+        alan['summary']();
+        
+        //name : alan hunt
+        //major : information systems
+        //interestingFact : Im a drummer and I used to professionally DJ weddings
+                    </pre>`+
+                    "<p>Here we've used bracket notation to create properties for the object, similar to how we'd be"+
+                    " working with arrays, but it accomplishes the exact same thing as in the previous example."+
+                    "With this bracket notation we can actually pass in variables to set the key value and make custom"+
+                    " object properties. This has helped me personally when I created a function that traversed through"+
+                    " a form to grab the varying name attributes of the input fields as keys and created objects paired"+
+                    " with the form's value.</p>"+
+                    `<pre>
+        let alan = {};
+        let n = "name";
+        let m = "major";
+        let i = "interestingFact";
+        let s = "summary";
+        
+        alan[n] = "alan";
+        alan[m] = "information systems";
+        alan[i] = "interestingFact";
+        alan[s] = function(){
+             for(let [key, value] of Object.entries(this)){
+               if(key !== "summary")
+                  console.log(\`\${key} : \${value}\`)
+           }
+        };
+        
+        alan[s]();
+        // alan['summary']();
+        //name : alan hunt
+        //major : information systems
+        //interestingFact : Im a drummer and I used to professionally DJ weddings
+                    </pre>`+
+                    "<p>This is more work, but again it accomplishes the same thing and can be useful if/when the time calls for it. This"+
+                    " example also demonstrates how we can replace creating a new object by '= new Object()' with simply using '= {}'.</p>"+
+                    "<p>We've been using a simple function for each object to output all of its properties (minus the function itself)"+
+                    " but let's see what it would look like to access individual properties.</p>"+
+                    `<pre>
+        let alan = new Object();
+        alan['name'] = 'alan hunt';
+        alan['major'] = 'information systems';
+        alan['interestingFact'] = 'Im a drummer and I used to professionally DJ weddings';
+        alan['summary'] = function(){
+          for(let [key, value] of Object.entries(this)){
+            if(key !== "summary")
+              console.log(\`\${key} : \${value}\`)
+          }
+        };
+        
+        let i = 'interestingFact';
+        console.log(\`\${alan.name}, \${alan['major']}, \${alan[i]}\`)
+        
+        // alan hunt
+        // information systems
+        // Im a drummer and I used to professionally DJ weddings
+                    </pre>`+
+                    "<p>Using the object from previous example we see three different ways to access an object's properties"+
+                    " through dot, bracket, and bracket variable notation. A million ways to skin a buck.</p>"+
+                    "<p>Let's get more object-oriented with all these objects and see what it would look like using classes"+
+                    " and see what it looks like to define them as classes and use constructors.</p>"+
+                    `<pre>
+        function Alan(name, major, interestingFact, summary){
+          this.name = name;
+          this.major = major;
+          this.interestingFact = interestingFact;
+          this.summary = summary;
+        };
+        function summary(){
+          for(let [key, value] of Object.entries(this)){
+            if(key !== "summary")
+              console.log(\`\${key} : \${value}\`)
+          }
+        };
+        
+        const al = new Alan("alan", "info sys", "drummer/DJ", summary);
+        
+        al.summary();
+        //name : alan
+        //major : info sys
+        //interestingFact : drummer/DJ
+                    </pre>`+
+                    "<p>We define a function that acts as a constructor and we pass in values when we create a new instance"+
+                    " of that object and we're back at the same end result! To wrap things up here is how you would define the Alan object as a class.</p>"+
+                    `<pre>
+        class Alan{
+          constructor(name, major, interestingFact, summary){
+            this.name = name;
+            this.major = major;
+            this.interestingFact = interestingFact;
+            this.summary = summary;
+          }
+        }
+        function summary(){
+          for(let [key, value] of Object.entries(this)){
+            if(key !== "summary")
+              console.log(\`\${key} : \${value}\`)
+          }
+        };
+        
+        const al = new Alan("alan", "info sys", "drummer/DJ", summary);
+        
+        al.summary();
+        //name : alan
+        //major : info sys
+        //interestingFact : drummer/DJ
+                    </pre>`,
               "Video Summary: Objects":
-                  "<p></p>"
+                  "<iframe src=\"https://www.youtube.com/embed/bW9BjTpII8U\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
           },
           "assignment3essay": {
               "Opinions on Design" :
@@ -326,7 +447,8 @@ function App(){
                   "<p>The filter drop-shadow was awesome as well, didn't know what the difference between that and box-shadow was, I can now" +
                     " add that to my tool belt, too.</p>" +
                   "<p>All in all this seemed like it was a fantastic tutorial with a lot of essential CSS" +
-                    " tricks that I definitely would have loved to have watched when I started learning HTML/CSS back at Heartland.</p>"}
+                    " tricks that I definitely would have loved to have watched when I started learning HTML/CSS back at Heartland.</p>"},
+          "assignment4" : {"Objects Continued" : "<p>Where all the content is</p>", "Another section" : "<p>More stuff</p>"}
       };
 
       return (

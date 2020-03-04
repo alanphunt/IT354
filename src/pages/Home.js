@@ -1,6 +1,7 @@
 import React from 'react';
-
+import GitHub from "../components/GitHub";
 function Home() {
+
     return (
         <div className={"content"}>
             <div className={"card"}>
@@ -26,6 +27,7 @@ function Home() {
                     CSS page from<a href={"https://www.fonts.google.com"}> Google Fonts</a>.
                 </p>
             </div>
+            <GitHub/>
         </div>
     )
 }

@@ -3,9 +3,9 @@ import Assignments from '../components/assignments/Assignment'
 import Sidebar from '../components/sidebar/Sidebar'
 
 function Tutorials(props) {
+    console.log(props);
     let assignmentNum = props.match.params.assignment;
     let assignmentContent = props.location.list.assignment;
-
   return (
       <div className={"content assignmentContent"}>
           <div className={"assignmentContainer"}>
