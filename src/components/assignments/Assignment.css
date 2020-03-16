@@ -57,20 +57,37 @@ p{
 }
 
 @media only screen and (max-width: 685px) {
-#sidebar{
-    display: none;
-}
+    #sidebar{
+        display: none;
+    }
+
     .assignmentContainer {
         width: 100%;
         margin: 0;
     }
-
 }
 
+
 pre{
-    background-color: #333;
     color: wheat;
-    border-radius: 8px;
     white-space: pre-wrap;
+    background-color: #333;
+    border-radius: 8px;
     margin-bottom: 1rem;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1rem;
+    padding: 1rem 0;
+}
+
+
+.width50{
+    width: 50%;
+}
+
+.inline-img{
+    margin-bottom: 1rem;
+}
+
+ol, li{
+    list-style: inside;
 }

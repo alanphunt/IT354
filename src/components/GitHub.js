@@ -4,7 +4,8 @@ class GitHub extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            gitList: null
+            gitList: null,
+            gitColors: null
         };
     }
 
@@ -14,15 +15,18 @@ class GitHub extends React.Component {
             return await response.json();
         };
 
-       this._callGitHub().then(repos => {
+        this._callGitColors = async () => {
+            const response = await fetch('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json');
+            return await response.json();
+        };
+
+        this._callGitHub().then(repos => {
             this.setState({gitList: repos});
        });
-    }
 
-    componentWillUnmount() {
-        if (this._callGitHub) {
-            this._callGitHub.cancel();
-        }
+        this._callGitColors().then(colors => {
+           this.setState({gitColors: colors});
+        })
     }
 
     render(){
@@ -33,17 +37,26 @@ class GitHub extends React.Component {
                     <div className={"gitcardwrapper"}>
                     {this.state.gitList.map(repo => {
                         if(repo.id === 242429231 || repo.id === 235963014 || repo.id === 238362471) {
+                            let bgColor = {backgroundColor: this.state.gitColors[repo.language].color};
+
                             return (
-                                <div key={repo.id} className={"gitcard"}>
+                                <div key={repo.id} className={"gitcard"} onClick={()=>{window.open(repo.html_url, '_blank');}}>
                                     <div className={"githeader"}>
-                                        <i className={"material-icons i-marg-right"}>insert_drive_file</i>
-                                        <h2><a href={repo.html_url} target={"_blank"}>{repo.name}</a></h2>
+                                        <i className={"material-icons i-marg-right"}>turned_in_not</i>
+                                        <h2>{repo.name}</h2>
                                     </div>
                                     <div className={"gitsection"}>
                                         <p>{repo.description}</p>
                                     </div>
                                     <div className={"gitfooter"}>
-                                        <span>{repo.language}</span>
+                                        <div>
+                                            <div className={"langColor i-marg-right"} style={bgColor}/>
+                                            <span>{repo.language}</span>
+                                        </div>
+                                        <div className={"gitfootright"}>
+                                            <span>{repo.owner.login}</span>
+                                            <img src={repo.owner.avatar_url} alt={'user icon'}/>
+                                        </div>
                                     </div>
                                 </div>
                             )
@@ -57,7 +70,6 @@ class GitHub extends React.Component {
             return <div></div>
         }
     }
-
 }
 
 export default GitHub;

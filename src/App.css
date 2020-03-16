@@ -177,29 +177,33 @@ i{
     background-color: #fff;
     border: 1px solid #d1d5da;
     border-radius: 3px;
-    padding: .5rem;
+    padding: 1rem;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    max-width: 500px;
-    margin-right: 1rem;
+    cursor: pointer;
+    transition: .3s ease;
+    flex: 1 1 0;
+}
+
+.gitcard:hover{
+    box-shadow: 0 0 4px #000000;
 }
 
 .githeader{
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-    color: #0366d6;
+    color: #A46877;
 }
 
 .gitsection{
-    color: #586069!important;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-
+    height: 100%;
+    margin-bottom: 1rem;
 }
 
-.gitfooter{
-
+.gitsection p{
+    margin: 0;
 }
 
 .marg-bot{
@@ -207,7 +211,30 @@ i{
 }
 
 .gitcardwrapper{
-    display: flex;
-    flex-flow: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-auto-rows: minmax(350px, 1fr);
+    grid-gap: 2rem 2rem;
+}
 
+.langColor{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 100%;
+}
+
+.gitfooter{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gitfootright{
+    display: flex;
+    align-items: center;
+}
+
+.gitfootright img{
+    margin-left: 10px;
+    width: 25px;
 }

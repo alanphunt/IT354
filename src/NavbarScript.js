@@ -8,7 +8,6 @@ export const deferonload = () => {
     }, 250);
 
     var prevScrollpos = window.pageYOffset;
-    var prevLinkPos = 0;
 
     const hideNav = (e) => {
         var currentScrollPos = window.pageYOffset;
@@ -22,19 +21,4 @@ export const deferonload = () => {
     };
 
     window.onscroll = hideNav;
-    (function(){
-        let links = Array.from(document.querySelectorAll("#sidebar ul li a"));
-        for(let a of links){
-            a.addEventListener("click", e => {
-                e.preventDefault();
-                let id = e.target.hash;
-                window.scrollTo({
-                    top: (document.querySelector(id).offsetTop + (links.indexOf(a) > prevLinkPos ? document.querySelector(".navwrapper").clientHeight : 0)),
-                    left: 0,
-                    behavior: 'smooth'
-                });
-                prevLinkPos = links.indexOf(a);
-            });
-        }
-    })();
 };
