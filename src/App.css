@@ -129,7 +129,7 @@ i{
 
 .fadeinClass{
     opacity: 0;
-    animation: fadein .5s ease .1s 1 normal forwards;
+    animation: fadein .3s ease 0s 1 normal forwards;
     z-index: 1;
 }
 
@@ -147,19 +147,18 @@ i{
 .dropdownInner{
     display: none;
     background-color: #333333;
-    transition: .3s ease;
-}
-
-.dropdownInnerHover{
-    position: absolute;
-    top: 100%;
-    display: flex;
-    flex-flow: column;
     padding: 1rem 1rem 0 1rem;
     border-radius: 0 0 8px 8px;
     border-top: 4px solid #A46877;
     width: 300%;
     text-align: center;
+}
+
+.dropdownInnerHover{
+    position: absolute;
+    top: 94%;
+    display: flex;
+    flex-flow: column;
 }
 
 .dropdownItem{

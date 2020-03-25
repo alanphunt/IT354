@@ -1,10 +1,16 @@
 import React from 'react';
 import Assignments from '../components/assignments/Assignment'
 import Sidebar from '../components/sidebar/Sidebar'
+import {scrollToTop} from "../NavbarScript";
 
-class Tutorials extends React.Component{
+class Tutorials extends React.Component {
+
+    componentDidMount() {
+        scrollToTop();
+    }
+
     render() {
-        let assignmentNum = this.props.match.params.assignment;
+        //let assignmentNum = this.props.match.params.assignment;
         let assignmentContent = this.props.location.list.assignment;
         return (
             <div className={"content assignmentContent"}>

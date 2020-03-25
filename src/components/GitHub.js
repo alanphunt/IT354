@@ -10,23 +10,26 @@ class GitHub extends React.Component {
     }
 
     componentDidMount() {
-        this._callGitHub = async () => {
-            const response = await fetch('https://api.github.com/users/alpal309/repos');
-            return await response.json();
-        };
-
         this._callGitColors = async () => {
             const response = await fetch('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json');
             return await response.json();
         };
 
-        this._callGitHub().then(repos => {
-            this.setState({gitList: repos});
-       });
+        this._callGitHub = async () => {
+            const response = await fetch('https://api.github.com/users/alpal309/repos');
+            return await response.json();
+        };
 
         this._callGitColors().then(colors => {
-           this.setState({gitColors: colors});
-        })
+            this.setState({gitColors: colors});
+
+            this._callGitHub().then(repos => {
+                this.setState({gitList: repos});
+            });
+        });
+
+
+
     }
 
     render(){
@@ -36,7 +39,7 @@ class GitHub extends React.Component {
                     <h2 className={"marg-bot"}>Checkout my latest projects from GitHub</h2>
                     <div className={"gitcardwrapper"}>
                     {this.state.gitList.map(repo => {
-                        if(repo.id === 242429231 || repo.id === 235963014 || repo.id === 238362471) {
+                        if(repo.id === 242429231 || repo.id === 235963014 || repo.id === 248126258) {
                             let bgColor = {backgroundColor: this.state.gitColors[repo.language].color};
 
                             return (

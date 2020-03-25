@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import HoverDiv from "./nav/HoverDiv";
 
 class Dropdown extends React.Component{
     constructor(props){
@@ -7,26 +8,30 @@ class Dropdown extends React.Component{
         this.state = {
             hovered: false
         };
-        this.showMenu = this.showMenu.bind(this);
-        this.hideMenu = this.hideMenu.bind(this);
     }
 
-    showMenu(){
+    toggleMenu = () => {
+        this.setState({
+            hovered: !this.state.hovered
+        });
+    };
+
+    showMenu = () =>{
         this.setState(state => ({
             hovered: true
         }));
-    }
+    };
 
-    hideMenu(){
+    hideMenu = () => {
         this.setState(state => ({
             hovered: false
         }));
-    }
+    };
 
     render(){
         let className = "dropdownInner";
         if(this.state.hovered) {
-            className += " dropdownInnerHover";
+            className += " dropdownInnerHover fadeinClass";
         }
 
         let alist = this.props.assignmentList;
@@ -39,11 +44,12 @@ class Dropdown extends React.Component{
         });
 
         return(
-            <div className={"navlinkInner"} onClick={this.hideMenu} onMouseEnter={this.showMenu} onMouseLeave={this.hideMenu}>
+            <div className={"navlinkInner"} onClick={this.toggleMenu} onMouseEnter={this.showMenu} onMouseLeave={this.hideMenu}>
+                <HoverDiv isActive={this.props.divstate.activeLink === link.url} hovered={this.props.divstate.hoveredLink === link.text}/>
                 <i className="material-icons i-marg-right">{link.icon}</i>
                 <span>{link.text}</span>
                 <div className={className}>
-                    {Object.keys(topics).map((assignment) =>{
+                    {Object.keys(topics).map((assignment) => {
                         let topic = topics[assignment];
                         let newTo = `/${link.url}/${assignment}`;
                         return (

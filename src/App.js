@@ -44,7 +44,7 @@ class App extends React.Component{
         
             </pre>`,
                 "Unary Operators":
-                    "<p><b>Unary operators</b> are operations with only one operand and makes me think of CRUD " +
+                    "<p><strong>Unary operators</b> are operations with only one operand and makes me think of CRUD " +
                     "operations (create, read, update, delete) for variables and objects. Unary operands will return some sort of value upon" +
                     "the completion of its operation and can negate, modify, or determine types of values. " +
                     "Negation/increment operator types include the following</p>" +
@@ -384,20 +384,20 @@ class App extends React.Component{
             "assignment3essay": {
                 "Opinions on Design" :
                     "<p>The first design flaw that I'll start with and the one that really " +
-                    "got my blood boiling was <b>number 2: pagination used for the wrong purpose</b>, aka for (pardon my French) shit excuses of" +
+                    "got my blood boiling was <strong>number 2: pagination used for the wrong purpose</strong>, aka for (pardon my French) shit excuses of" +
                     " websites and businesses that spin up click-bait articles with little substance that are just riddled with ads to" +
                     " the point of rendering the website impossible to navigate without tricking you into clicking an ad. I hope I die" +
                     " before I ever subject myself to building websites for companies like that, let alone creating 'content' for them." +
                     " Those people lead sad, meaningless lives and I feel sorry for them. I unfortunately still use Snapchat" +
                     " and any time they have a video that is talking about an article and you click that article to read what it's" +
                     " about it really isn't even an article, it's just a million ads that you have to try to swipe around to scroll through the page. </p>" +
-                    "<p>Next awful thing that annoys the living heck out of me is <b>number five: no way to get in touch.</b>" +
+                    "<p>Next awful thing that annoys the living heck out of me is <strong>number five: no way to get in touch.</strong>" +
                     "I understand companies don't want to spend money on hiring more call center people and they've spent millions of" +
                     " dollars creating these lack luster 'chat bots' to avoid doing that, but holy hell do you still have to swim" +
                     " through a sea of crap, FAQ pages, support forums, and their overloaded websites to get to anything useful." +
                     " Every single company is guilty of this nowadays and I gain real respect for the ones who aren't afraid to back" +
                     " their products up with real support.</p>" +
-                    "<p>Last but not least is <b>number seven: too much functionality that requires registration.</b> Yelp is the" +
+                    "<p>Last but not least is <strong>number seven: too much functionality that requires registration.</strong> Yelp is the" +
                     " number one perpetrator of this, where you can't do hardly anything at all without needing to login." +
                     "I remember the good old days where data wasn't treated as gold and most any website you came across you " +
                     "could accomplish what you came to do without having to register and feed a bunch of fake data to these companies." +
@@ -459,17 +459,17 @@ class App extends React.Component{
                     " that the construction workers can ensure that the house inherits those properties when it's built.</p>" +
                     "<p>The blueprint doesn't necessarily specify what sort of cabinets the kitchen will get or what color" +
                     " walls the rooms will be, but that can be decided as the designing phase unfolds. Prototypes are very" +
-                    " similar in regards to our blueprint example such that classes and data types are implementations of the <b>Object prototype</b>" +
+                    " similar in regards to our blueprint example such that classes and data types are implementations of the <strong>Object prototype</strong>" +
                     " model and that they inherit certain characteristics from its parent (or prototype, I'll end up using these terms" +
                     " interchangeably), but while still having the capability to add properties to the implementation itself as well as" +
                     " the original prototype model. Prototypes can also have prototypes and when you call back far enough " +
-                    "everything stems from the <b>Object</b> prototype. After that you'll just get null. It's like asking" +
+                    "everything stems from the <strong>Object</strong> prototype. After that you'll just get null. It's like asking" +
                     " what happened before the big bang. That's a question for another tutorial.</p>" +
                     "<p>\"Alan, get to the heckin' snippets.\" Alrighty then!</p>" +
                     "<p>Okay, to continue with horrible edgy examples, let's say hypothetically I'm a web developer" +
                     " and I'm also a member of the Blood gang. A rule is that I can't use words that start with the " +
                     "letter 'C' because it represents my rival gang- the Crips. Well, I want to add a function to the" +
-                    " <b>String</b> prototype so I can simply replace any word that starts with a 'C' with the letter 'B' " +
+                    " <strong>String</strong> prototype so I can simply replace any word that starts with a 'C' with the letter 'B' " +
                     "on any string type. Let's do it!</p>" +
                     "<pre><code>"+
 `        String.prototype.blood = function(){
@@ -492,7 +492,7 @@ class App extends React.Component{
                     "<p>It is also worth mentioning that within the blood function I called 'this' which refers to the string that is implementing the"+
                     " function, not the String prototype object that the function technically belongs to.</p>"+
                     "<p>Next up let's create a new class and add some properties via its prototype.</p>"+
-                    "<img src='/assignmentimages/inherit.jpg' alt='inheritance' class='width50 inline-img'>"+
+                    "<img src='/assignmentimages/inherit.jpg' alt='inheritance' class='inline-img'>"+
                     "<p>So we started by sprinkling some syntactic sugar in our code by creating a Blank class which we can"+
                     " see is initially undefined within the console. We then called Blank.prototype to see what we had going on behind the scenes and we"+
                     " see all the default properties and functions for Blank. Then we can add a property 'prop' to it with a value of 'neat!'. We create"+
@@ -541,9 +541,6 @@ class App extends React.Component{
         let owoa = {name: 'dexter', funcy: x};
         owoa.funcy();
         //{name: 'dexter', funcy: f()}, window object
-        
-        
-        
 `
                     +"</code></pre>"+
                     "<p>Okay, I think that's enough scenarios to start breaking things down. Time to bust out an ordered list.</p>"+
@@ -559,7 +556,9 @@ class App extends React.Component{
                     "<p>Man oh man the possibilities. Is this why anyone who isn't a web developer hates JavaScript? No idea! We can see that "+
                     "we can manipulate the syntax and where the function is called from to change 'this' to our liking. Of course that's basically "+
                     "irrelevant in node.js where there is no window object because it's only DOM specific.</p>",
-                "Video Summary: Prototype Chain Inheritance, 'this'": ""
+                "Video Summary: Prototype Chain Inheritance, 'this'":
+                    "<iframe src='https://www.youtube.com/embed/wOgS3JyCHek' class='inline-img' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"+
+                    "<iframe src='https://www.youtube.com/embed/dTliAdgjZ6g' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
             },
             "assignnment4essay":{
                 "Monolithic vs. Microservice":
