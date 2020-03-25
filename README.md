@@ -1,3 +1,9 @@
+ASSIGNMENT 4 UPDATES__________
++ Added a little CSS arrow to the navbar hover effect and persisted the effect to active pages
++ Got rid of unmounting bug that was breaking the site
++ added click feature to the dropdown menu to make it work on mobile
++ Improved styling of the github section on the homepage
+
 ASSIGNMENT 3 UPDATES__________
 + Integrated GitHub API call to pull top three repositories from my profile
 + Created dropdown menu separate assignments into their own pages
