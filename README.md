@@ -1,3 +1,15 @@
+ASSIGNMENT 3 UPDATES__________
++ Integrated GitHub API call to pull top three repositories from my profile
++ Created dropdown menu separate assignments into their own pages
++ Organized the link bar to prioritize the tutorial page
++ Improved navbar show/hide script in conjunction with the sidebar using anchor tags on tutorials page
++ Reworked the sidebar to work with the new architecture of the nav/tutorials/assignment components
+
+Known bugs to fix in v4: 
+- Add dropdown action on click for mobile view
+- Look into the tutorial page crash on refresh (state persistence issue?)
+- Improve styling of GitHub section on homepage
+
 ASSIGNMENT 2 UPDATES__________
 + Changed code image to just text.
 + Implemented JS function to move navbar out of view upon scroll down but bring it back upon scroll up to combat the navbar eating page content. This also required adding a padding to the page because position: sticky 'lifts' the element from the DOM.
