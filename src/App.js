@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {deferonload} from "./NavbarScript";
 
-
 class App extends React.Component{
     componentDidMount() {
         deferonload();
@@ -227,7 +226,7 @@ class App extends React.Component{
                 "Video Summary: Functions":
                     "<iframe src=\"https://www.youtube.com/embed/K5TAU1Vp0CA\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"},
             "assignment3": {
-                "Objects":
+                "{Objects}, Ob[jects], Ob.jects":
                     "<p>Hey all and welcome back to another tantalizing tutorial. This is one that is guaranteed to get you" +
                     " PUMPED UP- subjectively speaking of course, but that's my objective. That's right, we're diving into the world of JSON, or" +
                     "JavaScript Object Notation, or simply just objects.</p>" +
@@ -591,6 +590,266 @@ class App extends React.Component{
                     "<p>All in all, it seems like an exciting time to get into development to help these massive enterprises" +
                     " switch to a more long-term development strategy while still maintaining creative freedom to really" +
                     " leave your mark wherever you go.</p>"
+            },
+            "modules": {
+                "Import/Export Modules":
+                    "<p>Modules are what's really bringing JS into 21st century scripting languages. Though they've been around " +
+                    "in Node.JS for some time, they're finally gaining support in recent browsers and are providing all the benefits " +
+                    "of more efficient load times and a 'just in time' approach to calling functions as you need them. </p>" +
+                    "<p><strong>So, what are modules?</strong> When you think of modules I hope you think about modularity and " +
+                    "Legos. You could either dump the entire box of Legos out and as you're building something you can repeatedly sift through " +
+                    "the scattered pieces or you can plan ahead of time and 'import' only the pieces that you need for certain portions of " +
+                    "your project. The latter is a much more organized and efficient approach and the same principal is applied to JS modules. You can " +
+                    "write functions grouped together in pages as we usually would but we can then export each individual function and then import " +
+                    "the ones we need onto pages that will use them as needed. Imagine just importing a couple of functions from the jQuery library " +
+                    "rather than the entire catalog.</p>"+
+                    "<p>To set things up to get started with modules they'll need to be retrieved from a server with the header 'Content-Type' set to " +
+                    "text/javascript. Node among many other servers already take care of this for .js files but we can specify modules with a file " +
+                    "extension of .mjs and if the MIME type isn't set properly on your response headers then you're bound to get a MIME type error. " +
+                    "A few other things worth mentioning are that TypeScript doesn't support .mjs extensions and that it's good practice to denote " +
+                    "a modular file by importing it with a type='module' attribute on your script import. Now that the housekeeping is taken care of, " +
+                    "let's get into some examples. Luckily this website is built with React and is heavily reliant on modules so I'll use snippets " +
+                    "from my very own code.</p>"+
+                    "<p>In order to import a function, we first have to export a function. We'll import some functions from SidebarScript.js into" +
+                    " our Sidebar.js component to use. </p>"+
+                    "<pre><code>"+
+`export const SidebarScript = () => {
+    //do stuff
+    }
+`+
+                    "</code></pre>"+
+                    "<p>And to use this function in Sidebar.js it would look like..</p>"+
+                    "<pre><code>"+
+`    import {SidebarScript} from './SidebarScript.js';
+
+    SidebarScript();
+`+
+                    "</code></pre>"+
+                    "<p>We simply export our function and we import it elsewhere and call it. Literally "+
+                    "that simple! Any function we want to export we just denote by the word 'export' before its declaration "+
+                    " and then we import it by the name of its function within curly braces and you can call the function as you "+
+                    "normally would. We can also declare a default export or export all the functions in one call, typically at the bottom of the page like so</p>"+
+                    "<pre><code>"+
+`   const x = () => ();
+    const y = () => ();
+    const z = () => ();
+    
+    export {x, y, z}
+`
+                    +"</code></pre>"+
+                    "<p> and </p>"+
+                    "<pre><code>"+
+`    const x = () => ();
+    const y = () => ();
+    const z = () => ();
+    
+    export {x, y, default z};
+    
+    //in Sidebar.js
+
+    import SidebarScript from 'SidebarScript';
+    //will only import the default export, z(), by calling SidebarScript();
+   
+    // or import all exports
+    import * as SideScripts from 'SidebarScript.js';
+    SideScripts.x();
+    SideScripts.y();
+    SideScripts.z();
+`
+                    +"</code></pre>"+
+                    "<p>So as we can see we can customize exactly what functions we want to export, which ones we want to establish as the default, and then"+
+                    " how we can even name our import as we saw by importing all (*) exports named as SideScripts.</p>"+
+                    "<p>Modules makes our code much more efficient to pick and choose which functions we need where and it can help improve code readability "+
+                    "as we can separate out classes of functions and import the pieces as we need.</p>",
+                "Video Summary: Import/Export Modules":
+                    "<iframe src=\"https://www.youtube.com/embed/nD660za4lg4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+            },
+            "hofs": {
+                "Higher Order Functions":
+                    "<p>With large programs comes great complexity and then readability and reusability become crucial for minimizing bugs and writing efficient code. I hope when you think of higher order functions (HOF) that you think " +
+                    "of a medieval social hierarchy like I do. There are multiple towns that are near to each other and thus fall under the category of a country. Each town has its own ruler and hierarchy and they perform certain functions " +
+                    "to run their respective towns efficiently. The functionality of that ruler for his or her town isn't the same functionality of the king of the entire country. Why would there be two kings performing the same functionality to rule their land?" +
+                    " That's repetitive and inefficient and would eventually lead to a cival war, but performing functionality to run an entire country requires a lot of different orders running their respective towns to serve the greater good of " +
+                    "the country- and this is how I see HOFs. </p>"+
+                    "<p>You have the highest order, the king and his courtship, that take in 'lower orders', the rulers of individual towns, to perform their individual functionality and return to the king their knowledge of their towns so that the common goal " +
+                    "between the towns and the higher order of progressing the entire country can be achieved and without unnecessary repetition occupying precious resources.</p>"+
+                    "<p>In other words, to adhere to the DRY principal higher order functions are critical and they also make use of the strengths of JavaScript in that we can pass functionality around through generalizations in our code. Example time!</p>"+
+                    "<pre><code>"+
+                    `    const increaseByOne = num => num + 1;
+    const increaseByTwo = num => num + 2;
+    const increaseByThree = num => num + 3;
+    
+    increaseByOne(4); // 5
+    increaseByTwo(4); // 6
+    increaseByThree(4); // 7
+`
+                    +"</code></pre>"+
+                    "<p>So we've got some great functions, the best functions, maybe ever. Takes in a number, increases that number by the functions' respective amount, and returns the value. "+
+                    "These functions are repetitive A.F. and would guarantee your imminent termination. So how can we be less repetitive? Well, if we think about simplifying these functions, we have "+
+                    " to look at what they have in common and generalize things from there. Well, what they have in common is that they take in a number and increase it. The number the functions take in is already "+
+                    "generalized, so why not just generalize the amount each are increased by? </p>"+
+                    "<pre><code>"+
+                    `   const increaseByX = (num, x) => num + x;
+    increaseByX(4, 3); // 7
+`
+                    +"</code></pre>"+
+                    "<p>We've successfully combined those three functions into one by generalizing the parameters and that's a core concept of HOFs, generalize the parameters so that we can pass in the functionality that we need to perform certain tasks. "+
+                    " Well, the function still isn't that useful on its own, but when it becomes a cog in a greater function we can see the beauty of HOFs come through. Let's build off of that example.</p>"+
+                    "<pre><code>"+
+                    `   const increaseByX = (num, x) => num + x;
+    
+    const increaseArrayByXAndSum = (array, callback) => {
+        let output = 0;
+        array.forEach(value => {output += callback(value, 3)});
+        return output;
+    };
+    
+    increaseArrayByXAndSum([1,2,3], increaseByX); // 15
+`
+                    +"</code></pre>"+
+                    "<p>Is the code and functionality good? Not really. Does it get my point across about HOFs? I sure hope so. We have our increaseByX() function which takes in two general parameters and returns their sum, and the higher order function"+
+                    " increaseArrayByXAndSum() function takes in two general parameters as well, one of which is a callback (increaseByX), which is how we know that increaseArrayByXAndSum is the higher order function; it's the king of the land that invokes the smaller functions"+
+                    " of whom they report their results to. All hail the higher order!</p>",
+                "Video Summary: Higher Order Functions":
+                    "<iframe src=\"https://www.youtube.com/embed/b9HSKCfGQMA\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+            },
+            "arraymethods": {
+                "Advanced Array Methods":
+                    "<p>We live in a world that contains many things. Many data. Much data. Tons of data. All of it.</p>" +
+                    "<p>This is why arrays exist. There's a lot of data points, and they often need to be grouped together. Arrays are important.</p>" +
+                    "<p>This is also why we have advanced array methods! These functions belonging to the Array object help us web programmers adhere to DRY principles and write cleaner, more legible code that decreases surface area for bugs to occupy." +
+                    "The people over there at ECMA know that in order to do anything on an array, loops have to be involved and that's exactly what they all do. Some take callback functions to perform on each value of an array, and some even return a new" +
+                    " array or what's left of an array after running the values against a conditional statement! </p>" +
+                    "<p>We'll cover my favorites:</p>" +
+                    "<ul>" +
+                    "<li>Map</li>" +
+                    "<li>Filter</li>" +
+                    "<li>ForEach</li>" +
+                    "<li>Concat</li>" +
+                    "<li>Sort</li>" +
+                    "<li>Slice</li>" +
+                    "<li>Push</li>" +
+                    "<li>Join</li>" +
+                    "</ul>",
+                " Map":
+                    "<p><strong>Starting with map</strong>, it iterates through an array and returns a new array based on the return values of performing a callback function. It's a great way to perform calculations on every index within an array of numbers or to " +
+                    "manipulate strings and create a new array. Map is especially critical in React because JSX requires a function to render some sort of output to display on the virtual DOM and that cannot be accomplished by a simple for or forEach loop." +
+                    "Map is pretty universal through many programming languages so it's worth getting to know no matter what field of programming you specialize in. Let's see what an example looks like.</p>"+
+                    "<pre><code>"+
+`    const numbers = [1,2,3];
+    let triplized = numbers.map(number => parseInt(\`\${number}\${number}\${number}\`));
+     console.log(triplized);
+     //[111, 222, 333]
+`
+                    +"</code></pre>"+
+                    "<p>We start off with a boring array with values [1, 2, 3]. Next, we call the map function on that array and for every number within it we simply concatenate the value three times to 'triplize' it and we return that value into an"+
+                    " index within the triplized array and output the results. This does not effect the original array unless we were to assign the return value of the map function to itself. Like I said, map is probably the most used array method in React"+
+                    " and is a pretty universal concept in many different programming languages.</p>",
+                " Filter":
+                    "<p><strong>Next up we have filter, </strong>which iterates through the array and only returns values within it that meet a given condition and returns a new array. Again, since it returns a new array it's very useful in React, especially "+
+                    "if you want to implement a search feature to narrow results in a table. </p>"+
+                    "<pre><code>"+
+`    const numbers = [1,2,3,4,5,6];
+    let evenNumbers = numbers.filter(number => number % 2 === 0);
+     console.log(evenNumbers);
+     //[2,4,6]
+`
+                    +"</code></pre>"+
+                    "<p>Here we call the filter function on an array of numbers and we only return the values within that array if they're even. The new array evenNumbers is now only the values [2,4,6] from the original numbers array.</p>",
+                " ForEach":
+                    "<p>Another simple yet important method is <strong>ForEach.</strong> It iterates through an array performing a callback function on each value but this time it doesn't return a new array. Still very useful but I'd still"+
+                    " say not as important as Map in React in regards to modifying a component's state because you should always use setState instead of modifying it directly and this is where Map shines. Regardless, if we're just wanting"+
+                    " to loop through the values within an array and output them to the console <strong>ForEach</strong> will be your weapon of choice.</p>"+
+                    "<pre><code>"+
+`    const numbers = [1,2,3];
+    numbers.forEach(number => console.log(number));
+     //1
+     //2
+     //3
+`
+                    +"</code></pre>"+
+                    "<p>Pretty simple stuff, quicker to type out than a traditional 3-prong for loop and is very readable.</p>",
+                " Concat":
+                    "<p>A recent advanced array method that I've put to use is <strong>Concat</strong> which combines two arrays, or concatenates them. It doesn't have to be an entire array that you're appending to an existing one, you can simply add" +
+                    " one element to an existing array and it returns a new array. This is a simpler version of the <strong>Splice</strong> method which you can use to replace elements within the original array or add elements to it, but is still a little"+
+                    " more advanced than <strong>Push</strong> because Concat returns the array and Push only returns the new element. Since " +
+                    "<strong>Concat</strong> returns a new array it's better for modifying state with setState in React so let's see my example.</p>"+
+                    "<pre><code>"+
+`        add = () => {
+        this.setState(state => ({
+            students: state.students.concat(state.student)
+        }));
+    };
+`
+                    +"</code></pre>"+
+                    "<p>The point of this function is to add a student object into a collection of student objects to form a classroom. State.students is an array of student objects to which we're appending one more student object onto (state.student)."+
+                    "This returns the whole array with the new student and we can use that within setState properly.</p>",
+                " Sort":
+                    "<p>The <strong>Sort</strong> method does exactly that, it sorts an array in ascending order or alphabetically via UTF-16 values if it's an array of strings. This method modifies the existing array. A great use for this is obviously" +
+                    " sorting tables of data. You can pass in a callback function to specify how you want the array sorted and the callback takes in two parameters for comparison. Let's have a look.</p>"+
+                "<pre><code>"+
+`     let numbers = [7,3,9,1];
+    numbers.sort();
+    console.log(numbers); // [1,3,7,9]
+    let words = ['banana', 'apple', 'orange']
+    console.log(words.sort()); // ['apple', 'banana', 'orange']
+`
+                    +"</code></pre>"+
+                    "<p>Simple and effective. It converts the strings to their UTF-16 values and compares those and sorts them in ascending order with the in-place algorithm and modifies the existing array.</p>",
+                " Slice":
+                    "<p>Another great one I've implemented recently as well is the <strong>Slice</strong> method which returns a portion of the array it's called on from a beginning index to an ending index. Much like how my add function concatenated a new student" +
+                    " object into an array and returned the new array, splice will do the opposite by shaving off an element at a desired position and return a new array- perfect for state modification in React! Let's look.</p>"+
+                    "<pre><code>"+
+`     subtract = () => {
+        this.setState(state => ({
+            students: state.students.slice(0, -1)
+        }));
+    };
+`
+                    +"</code></pre>"+
+                    "<p>Again, to modify state properly we need to use setState, and we call .splice(0, -1) on the array of student objects to return all values within the array from the index 0 to the last index -1 exclusively. This simply shaves off the last element"+
+                    " in the array and returns the new modified array. This method does not modify the existing array.</p>",
+                " Push":
+                    "<p>As mentioned earlier, the <strong>Push</strong> method takes in an element to add to the end of the array and returns the new array length. Works great with the forEach method!" +
+                    "Let's have a look.</p>"+
+                    "<pre><code>"+
+`     let arr = [1,2,3];
+      let count = arr.push(4);
+      console.log(arr); // [1,2,3,4]
+      console.log(count); // 4
+`
+                    +"</code></pre>"+
+                    "<p>Nothing ground breaking here, but we see that we store arr.push(4) in a variable because it represents the new length of the existing array, which is 4 since we added the number 4 to the end of it.</p>",
+                " Join":
+                    "<p><Strong>Join</Strong> is fantastic if you want to convert an array of strings into a sentence. I've done exactly that on this website if you look at my dropdown menu when you hover over the 'Tutorials' link in the nav bar." +
+                    "I first created an array of Object keys from the list of subcategories and then joined all those keys together with a ', ' so it looks like coherent list. Example below.</p>"+
+                    "<pre><code>"+
+`     let topics = ['Hoisting', 'Unary Operators', 'Values and Types'];
+    let linkText = topics.join(', ');
+    console.log(linkText); // 'Hoisting, Unary Operators, Values and Types'
+`
+                    +"</code></pre>"+
+                    "<p>We see that every value in the original topics array is joined together into one string separated by the given ', '. We just have to be careful in remembering that this method returns a string and not another array. </p>",
+                " Video Summary: Advanced Array Methods":
+                    "<iframe src=\"https://www.youtube.com/embed/sW0nDwyW-pI\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+
+            },
+            "assignment5essay": {
+                "Romney Web Font Problem":
+                    "<p>With something as critical as politics and running in the presidential race is, clarification and dependability are of utmost importance at all times. One slip up can cause irreparable damage. </p>" +
+                    "<p>An article regarding breaking news for Mitt Romney's choice whether or not to run in the 2016 presidential race briefly read 'Mitt Romney Is Officially Running for President', but then a moment later loaded as" +
+                    " 'Mitt Romney Is Officially Not Running for President'. There was enough of a discrepancy in load times between two different styles of fonts on the web page for someone to take a screenshot and blast it to Twitter.</p>" +
+                    "<p>This has something to do with FOIT, or flash of invisible text, which renders text invisible until it's loaded, and a race condition between loading two different external fonts (bold and bold/italic) within a single headline. You're probably thinking..'wow, all that" +
+                    " from loading fonts?' Yeah, me too. But it shows you there's more that meets the eyes with approaching design and the details you have to keep in mind when you're building a web page that potentially millions of people depend" +
+                    " on for accurate, dependable news. </p>" +
+                    "<p>Load times for anything have been a bane of human existence for as long as we've been alive. Waiting for fires to start to cook our catch, waiting for stickdeath.com to load its" +
+                    " flash movies, waiting for mega virtual worlds like WoW to load, or waiting for fonts to load. If fonts haven't loaded yet and the browser fills them in with some other font and " +
+                    "it just so happens to have a slightly wider spacing than your desired font and it starts moving things around, well then that doesn't make for the best UX now does it? On top of " +
+                    "loading everything else a web page has to, the user should be able to start digesting content right off the bat, but if things are moving around then it's like trying to live in a " +
+                    "house where you've got a moving company unpacking everything and moving things around.</p>" +
+                    "<p>There are tons of articles about which font-loading method to use, be it flash of unstyled text, FOUT, flash of invisible text, FOIT, or flash of faux text, FOFT, the latest " +
+                    "of which would be FOFT to optimize perceived load times. FOFT encourages you to load your normal font first to get the browser to synthesize bold/italic versions automatically and " +
+                    "then trigger your real font next. This loads fonts right away and your overall user experience is just that much better.</p>"
             }
         };
 

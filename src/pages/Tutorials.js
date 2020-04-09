@@ -20,7 +20,7 @@ class Tutorials extends React.Component {
 
                 <div className={"card"} id={"sidebar"}>
                     <ul>
-                        {<Sidebar assignment={assignmentContent}/>}
+                        <Sidebar assignment={assignmentContent}/>
                     </ul>
                 </div>
             </div>
