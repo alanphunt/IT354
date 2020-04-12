@@ -7,6 +7,9 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {deferonload} from "./NavbarScript";
+import headers from "./images/headers.jpg";
+import xhr from "./images/xhr.jpg";
+import postman from "./images/postman.jpg";
 
 class App extends React.Component{
     componentDidMount() {
@@ -73,7 +76,7 @@ class App extends React.Component{
                     "<tr><td>string</td><td>literal array of characters</td></tr>" +
                     "<tr><td>symbol</td><td>Unique values used for object property identification</td></tr>" +
                     "</tbody></table>",
-                "Video Summary: Hoisting, Unary, and Types":
+                " Video Summary: Hoisting, Unary, and Types":
                     "<iframe src=\"https://www.youtube.com/embed/6HHI-Nlt9v4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"+
                     "<iframe src=\"https://www.youtube.com/embed/EUBH6DzkKrU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
             },
@@ -223,7 +226,7 @@ class App extends React.Component{
                     "<p>Next up we see the '...rest' argument in the 'equations' function. This represents an arbitrary amount of arguments that"+
                     " is essentially joined to an iterable array which the nested functions loop through to add or multiply all its values."+
                     " This is called rest parameters!</p>",
-                "Video Summary: Functions":
+                " Video Summary: Functions":
                     "<iframe src=\"https://www.youtube.com/embed/K5TAU1Vp0CA\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"},
             "assignment3": {
                 "{Objects}, Ob[jects], Ob.jects":
@@ -377,7 +380,7 @@ class App extends React.Component{
         //major : info sys
         //interestingFact : drummer/DJ
                     </pre>`,
-                "Video Summary: Objects":
+                " Video Summary: Objects":
                     "<iframe src=\"https://www.youtube.com/embed/bW9BjTpII8U\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
             },
             "assignment3essay": {
@@ -555,7 +558,7 @@ class App extends React.Component{
                     "<p>Man oh man the possibilities. Is this why anyone who isn't a web developer hates JavaScript? No idea! We can see that "+
                     "we can manipulate the syntax and where the function is called from to change 'this' to our liking. Of course that's basically "+
                     "irrelevant in node.js where there is no window object because it's only DOM specific.</p>",
-                "Video Summary: Prototype Chain Inheritance, 'this'":
+                " Video Summary: Prototype Chain Inheritance, 'this'":
                     "<iframe src='https://www.youtube.com/embed/wOgS3JyCHek' class='inline-img' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"+
                     "<iframe src='https://www.youtube.com/embed/dTliAdgjZ6g' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
             },
@@ -661,7 +664,7 @@ class App extends React.Component{
                     " how we can even name our import as we saw by importing all (*) exports named as SideScripts.</p>"+
                     "<p>Modules makes our code much more efficient to pick and choose which functions we need where and it can help improve code readability "+
                     "as we can separate out classes of functions and import the pieces as we need.</p>",
-                "Video Summary: Import/Export Modules":
+                " Video Summary: Import/Export Modules":
                     "<iframe src=\"https://www.youtube.com/embed/nD660za4lg4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
             },
             "hofs": {
@@ -710,7 +713,7 @@ class App extends React.Component{
                     "<p>Is the code and functionality good? Not really. Does it get my point across about HOFs? I sure hope so. We have our increaseByX() function which takes in two general parameters and returns their sum, and the higher order function"+
                     " increaseArrayByXAndSum() function takes in two general parameters as well, one of which is a callback (increaseByX), which is how we know that increaseArrayByXAndSum is the higher order function; it's the king of the land that invokes the smaller functions"+
                     " of whom they report their results to. All hail the higher order!</p>",
-                "Video Summary: Higher Order Functions":
+                " Video Summary: Higher Order Functions":
                     "<iframe src=\"https://www.youtube.com/embed/b9HSKCfGQMA\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
             },
             "arraymethods": {
@@ -850,6 +853,69 @@ class App extends React.Component{
                     "<p>There are tons of articles about which font-loading method to use, be it flash of unstyled text, FOUT, flash of invisible text, FOIT, or flash of faux text, FOFT, the latest " +
                     "of which would be FOFT to optimize perceived load times. FOFT encourages you to load your normal font first to get the browser to synthesize bold/italic versions automatically and " +
                     "then trigger your real font next. This loads fonts right away and your overall user experience is just that much better.</p>"
+            },
+            "assignment6": {
+                "Application Programming Interface":
+                    "<p>Application programming interface, API or even web services, are how one program can interact with another. Whether that interaction involves just sending parameters to a " +
+                    "server to retrieve a specific set of data or if one server wants to actually submit data for another server to persist to its database, APIs are the gateway to do so. There are " +
+                    "what programmers call 'endpoints', or dedicated paths on an external server that are purposefully exposed to the public that act as the gatekeeper between your request and the" +
+                    " database the server is attached to. Not every endpoint may interact with a database, it could just send hardcoded data, but typically your program is trying to access the data " +
+                    " another company has in order to make your website more dynamic, else you would have to constantly be copying and pasting data. Now, this poses potential security threats " +
+                    "if you want to create an endpoint for the public, so of course access has to be tightly controlled with input thoroughly sanitized as to prevent a compromise.</p>" +
+                    "<p>It's hard to think of a website that doesn't integrate APIs into their code. You use an API every time you want to use Google or Facebook to sign into an app, " +
+                    "if you want to use PayPal to pay, or even when you swipe your credit card at a physical machine- that data has to be verified in different networks, authenticated, and " +
+                    "authorized, so even outside of the digital realm APIs are still woven in. These requests are made over the hypertext transfer protocol, or HTTP, with various methods " +
+                    "of doing so, most common of which are GET, POST, PUT, DELETE, amongst many others. Each one requires different request headers and expects different response headers " +
+                    "back from the server in order to properly retrieve and process the data. We can see all the XHR, or XML (extended markup language) HTTP requests, made when a web page loads right from our browser.</p>" +
+                    "<p><img src='"+ xhr +"' alt='xhr requests'></p>" +
+                    "<p>These are all the requests made to a server to retrieve resources upon page load, not all of which are API calls, but none the less a server needs to be called for everything you see on a web page " +
+                    "or application from images to the code sheets for the browser to render. The developer console shows all these with the status, 200 being OK and that the desired endpoint was found and a resource " +
+                    "was retrieved, or 404 being your request didn't reach its destination. We can see where this call to the server originates from, the type of response sent back from the server, and even the size and time " +
+                    "it took to load.</p>" +
+                    "<p><img src='"+ headers +"' alt='headers'></p>"+
+                    "<p>Here we see a GET request my website made to GitHub's servers to get data on all my repositories over there. I had to specify my username and that I wanted repos in the URL so the request knows " +
+                    "where to go and what to get. Upon an HTTP status of 200 or so their server sent back an array of JSON objects with all the details about my repository that I could pick through to display the" +
+                    " data I wanted on my homepage. I also had to make another request to a different repository to retrieve the colors that represent the repository's main language. </p>",
+                "REST":
+                    "<p>REST, or representational state transfer, is a design style of server communication over networks. It's not quite yet a standard because it doesn't follow standards like " +
+                    "its counterpart SOAP, but it has quickly taken preference over a SOAP, simple object access protocol, based approach to networked application implementation. Both have their places, but RESTful applications are quickly " +
+                    "becoming the norm not only because of its flexibility, but also the fact that it can send back any format of data to let the receiving end do with it as it pleases, most typical of which is JSON.</p>" +
+                    "<p>So what actually is REST? As stated it's a transfer of the representation of a server state. Aka it's really just a set of principals a developer should follow to retrieve data " +
+                    "from an external resource. SOAP is a set standard with a protocol to follow like being in a religion and REST is like being agnostic with a set moral beliefs. Anyways, let's cover" +
+                    " the guiding principals of REST.</p>" +
+                    "<uL>" +
+                    "<li><strong>Client-Server: Keep these concerns separate for scalability and portability.</strong></li>" +
+                    "<li><strong>Stateless: The request should not depend on the context stored on the server.</strong></li>" +
+                    "<li><strong>Cacheable: Data should have an option to be cached or not.</strong></li>" +
+                    "<li><strong>Uniform Resource: Keep your endpoints generalized for dynamic access.</strong></li>" +
+                    "<li><strong>Layered System: Keep things secure by narrowing the scope of your endpoints.</strong></li>" +
+                    "<li><strong>Code on Demand: An optional ability to retrieve code to execute on the front end.</strong></li>" +
+                    "</uL>" +
+                    "<p>These are the guidelines, not standards, to follow if you want to consider your application to be RESTful. These were established by Roy Fielding in his dissertation" +
+                    " back in 2000.</p>",
+                "Postman":
+                    "<p>Postman is a great, free application that allows you to quickly test your own endpoints or even just hit other end point to see what data you can get back. It's great in " +
+                    "that it formats the server response, you can easily add/manipulate headers, and it keeps a history of your calls so you can see easily reference your trials. It also allows " +
+                    "you to make requests with its built in header that bypasses cross site references to it makes it that much easier to test out different endpoint. </p>" +
+                    "<p><img src='"+postman+"' alt='postman'></p>" +
+                    "<p>It boasts a simple UI all around with more functionality than just using cURL scripts in a CLI.</p>",
+                " Video Summary: API, REST, Postman":
+                    "<iframe src=\"https://www.youtube.com/embed/SIjVpRt7wxo\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+                },
+            "An Ode to Node": {
+                "An Ode to Node":
+                    "<p>According to <a href='https://nodejs.dev'>nodejs.dev</a>, Node.js is <strong>\"an open-source and cross-platform JavaScript runtime environment...that runs the V8 JavaScript engine " +
+                    "that powers Google Chrome outside of the browser.\"</strong> The V8 JavaScript engine is also open-source and developed by the Chromium Project and is inside the Chromium software that browsers" +
+                    " like Google Chrome, Microsoft Edge, Amazon Silk, Brave, Vivaldi, and Opera are built off of. Those browsers combined make up roughly " +
+                    "<a href='https://netmarketshare.com/browser-market-share.aspx?options=%7B%22filter%22%3A%7B%22%24and%22%3A%5B%7B%22deviceType%22%3A%7B%22%24in%22%3A%5B%22Desktop%2Flaptop%22%5D%7D%7D%5D%7D%2C%22dateLabel%22%3A%22Custom%22%2C%22attributes%22%3A%22share%22%2C%22group%22%3A%22browserVersion%22%2C%22sort%22%3A%7B%22share%22%3A-1%7D%2C%22id%22%3A%22browsersDesktopVersions%22%2C%22dateInterval%22%3A%22Monthly%22%2C%22dateStart%22%3A%222019-03%22%2C%22dateEnd%22%3A%222020-03%22%2C%22plotKeys%22%3A%5B%7B%22browserVersion%22%3A%22Edge%22%7D%2C%7B%22browserVersion%22%3A%22Opera%22%7D%2C%7B%22browserVersion%22%3A%22Chromium%22%7D%2C%7B%22browserVersion%22%3A%22Vivaldi%22%7D%2C%7B%22browserVersion%22%3A%22Opera%20Mini%22%7D%2C%7B%22browserVersion%22%3A%22Chrome%22%7D%2C%7B%22browserVersion%22%3A%22Silk%22%7D%5D%2C%22hiddenSeries%22%3A%7B%7D%2C%22pageLength%22%3A50%2C%22segments%22%3A%22-1000%22%7D'>80% of the market share</a>" +
+                    " for web browsers, so V8 has a large footprint and Node.js is now a top contender with other server-side languages such as Java or PHP. </p>" +
+                    "<p>V8 is a low-level assembler written in C++ that compiles JavaScript directly to machine code using just-in-time compilation that only compiles what's needed right when it's executed. It's also used in desktop " +
+                    "software like the Electron framework and even Visual Studio. V8 made its debut on September 2, 2008 with the first version of Chrome and " +
+                    "is currently on its eighth release, hence V8. (<a href='https://en.wikipedia.org/wiki/V8_(JavaScript_engine)'>wiki</a>)</p>" +
+                    "<p>Since Node.js is built off of Chromium and Chromium is built with C++, we can actually build on top of Chromium in C++ to translate our JavaScript into machine code that can " +
+                    "speak directly with the physical processors in our computers or phones. So Node acts as a proxy in-between JS and C++ and C++ acts as the proxy between its language and machine code," +
+                    " and that all happens within nanoseconds so that we can interact with computers.</p>" +
+                    "<p>Some other interesting finds about Node is the fact that ISU doesn't teach on it. Why did I choose this school? I can't wait to graduate. One more month! That's all I got.</p>"
             }
         };
 

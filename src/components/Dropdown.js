@@ -40,7 +40,7 @@ class Dropdown extends React.Component{
         let topics = {};
         Object.entries(alist).forEach(([key, value], index) => {
             let k = Object.keys(alist[key]);
-            topics[key] = k.filter(x => (!x.toLowerCase().includes("video") && x.substring(0,1) !== " ")).join(", ");
+            topics[key] = k.filter(x => (x.substring(0,1) !== " ")).join(", ");
         });
 
         return(

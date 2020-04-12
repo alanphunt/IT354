@@ -22,6 +22,10 @@ ul{
     list-style: inside;
 }
 
+.content ul{
+    margin-bottom: 1rem;
+}
+
 img, iframe{
     width: 100%;
     max-width: 100%;
