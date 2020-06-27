@@ -1,29 +1,29 @@
-table{
+table {
     width: 100%;
     margin: 1rem 0;
 }
 
-p{
+p {
     margin-bottom: 1rem;
 }
 
-.assignmentheader{
+.assignmentheader {
     display: flex;
     align-items: center;
     height: 45px;
 }
 
-.assignments{
+.assignments {
     width: 100%;
     margin-bottom: 2rem;
 }
 
-.assignmentContainer{
+.assignmentContainer {
     width: 80%;
     margin-right: 5%;
 }
 
-#sidebar{
+#sidebar {
     position: sticky;
     top: 100px;
     right: 0;
@@ -31,33 +31,33 @@ p{
     overflow: auto;
 }
 
-#sidebar ul{
+#sidebar ul {
     list-style: none;
 }
 
-#sidebar li{
+#sidebar li {
     border-bottom: 1px solid #eaeaea;
     padding: 10px 10px 10px 0;
     margin-bottom: 10px;
     display: flex;
 }
 
-#sidebar li:last-of-type{
+#sidebar li:last-of-type {
     margin-bottom: 0;
 }
 
-.activeassignment{
+.activeassignment {
     color: black;
 }
 
-.title{
+.title {
     display: flex;
     align-items: center;
     margin-bottom: .5rem;
 }
 
 @media only screen and (max-width: 685px) {
-    #sidebar{
+    #sidebar {
         display: none;
     }
 
@@ -66,7 +66,8 @@ p{
         margin: 0;
     }
 }
-pre{
+
+pre {
     color: wheat;
     white-space: pre-wrap;
     background-color: #333;
@@ -77,10 +78,10 @@ pre{
     padding: 1rem;
 }
 
-.inline-img{
+.inline-img {
     margin-bottom: 1rem;
 }
 
-ol, li{
+ol, li {
     list-style: inside;
 }

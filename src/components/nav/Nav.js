@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import Dropdown from '../Dropdown'
@@ -33,7 +34,7 @@ class Nav extends React.Component{
                             <i className="material-icons i-marg-right">{link.icon}</i>
                             <span>{link.text}</span>
                             <HoverDiv isActive={this.state.activeLink === link.url} hovered={this.state.hoveredLink === link.text}/>
-                          </NavLink>
+                        </NavLink>
                         : <Dropdown link={link} assignmentList={this.props.assigmentList} divstate={this.state}/>
                     }
                 </div>

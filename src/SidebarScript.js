@@ -1,8 +1,8 @@
-export const SidebarScript = () =>{
+export const SidebarScript = () => {
     var prevLinkPos = 0;
 
     let links = Array.from(document.querySelectorAll("#sidebar ul li a"));
-    for(let a of links){
+    for (let a of links) {
         a.addEventListener("click", e => {
             e.preventDefault();
             let id = e.target.hash;

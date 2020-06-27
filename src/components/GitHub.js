@@ -38,34 +38,34 @@ class GitHub extends React.Component {
                 <div className={"card"}>
                     <h2 className={"marg-bot"}>Checkout my latest projects from GitHub</h2>
                     <div className={"gitcardwrapper"}>
-                    {this.state.gitList.map(repo => {
-                        if(repo.id === 242429231 || repo.id === 235963014 || repo.id === 248126258) {
-                            let bgColor = {backgroundColor: this.state.gitColors[repo.language].color};
+                        {this.state.gitList.map(repo => {
+                            if(repo.id === 242429231 || repo.id === 235963014 || repo.id === 248126258) {
+                                let bgColor = {backgroundColor: this.state.gitColors[repo.language].color};
 
-                            return (
-                                <div key={repo.id} className={"gitcard"} onClick={()=>{window.open(repo.html_url, '_blank');}}>
-                                    <div className={"githeader"}>
-                                        <i className={"material-icons i-marg-right"}>turned_in_not</i>
-                                        <h2>{repo.name}</h2>
-                                    </div>
-                                    <div className={"gitsection"}>
-                                        <p>{repo.description}</p>
-                                    </div>
-                                    <div className={"gitfooter"}>
-                                        <div>
-                                            <div className={"langColor i-marg-right"} style={bgColor}/>
-                                            <span>{repo.language}</span>
+                                return (
+                                    <div key={repo.id} className={"gitcard"} onClick={()=>{window.open(repo.html_url, '_blank');}}>
+                                        <div className={"githeader"}>
+                                            <i className={"material-icons i-marg-right"}>turned_in_not</i>
+                                            <h2>{repo.name}</h2>
                                         </div>
-                                        <div className={"gitfootright"}>
-                                            <span>{repo.owner.login}</span>
-                                            <img src={repo.owner.avatar_url} alt={'user icon'}/>
+                                        <div className={"gitsection"}>
+                                            <p>{repo.description}</p>
+                                        </div>
+                                        <div className={"gitfooter"}>
+                                            <div>
+                                                <div className={"langColor i-marg-right"} style={bgColor}/>
+                                                <span>{repo.language}</span>
+                                            </div>
+                                            <div className={"gitfootright"}>
+                                                <span>{repo.owner.login}</span>
+                                                <img src={repo.owner.avatar_url} alt={'user icon'}/>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            )
-                        }
-                        return null;
-                    })}
+                                )
+                            }
+                            return null;
+                        })}
                     </div>
                 </div>
             )
