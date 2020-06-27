@@ -1,6 +1,6 @@
 {
-  "short_name": "Advocate",
-  "name": "Advocate",
+  "short_name": "IT354",
+  "name": "Alan Hunt's JS Tutorials",
   "start_url": ".",
   "display": "standalone"
 }
