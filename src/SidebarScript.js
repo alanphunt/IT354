@@ -3,6 +3,7 @@ export const SidebarScript = () => {
 
     let links = Array.from(document.querySelectorAll("#sidebar ul li a"));
     for (let a of links) {
+        // eslint-disable-next-line no-loop-func
         a.addEventListener("click", e => {
             e.preventDefault();
             let id = e.target.hash;

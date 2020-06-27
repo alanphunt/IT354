@@ -3,10 +3,9 @@ const deferonload = () => {
     //the scroll position of the window so I have to do it manually, but when I did that the navbar
     //would disappear off the screen so I have to manually reset that too. What is life?
 
-    var prevScrollpos = window.pageYOffset;
-
-    const hideNav = (e) => {
-        var currentScrollPos = window.pageYOffset;
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function(){
+        const currentScrollPos = window.pageYOffset;
         let h = document.querySelector(".navwrapper");
         if (prevScrollpos > currentScrollPos) {
             h.style.top = "0";
@@ -15,8 +14,6 @@ const deferonload = () => {
         }
         prevScrollpos = currentScrollPos;
     };
-
-    window.onscroll = hideNav;
 };
 
 const scrollToTop = () => {
