@@ -16,7 +16,7 @@ class GitHub extends React.Component {
         };
 
         this._callGitHub = async () => {
-            const response = await fetch('https://api.github.com/users/alpal309/repos');
+            const response = await fetch('https://api.github.com/users/alanphunt/repos');
             return await response.json();
         };
 
